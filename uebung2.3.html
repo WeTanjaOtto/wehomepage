@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>Übung 2.3</title>
+  <style>
+	  * {
+		  margin: 0px;
+		  padding: 0px;
+		  font-family: tahoma;
+	  }
+	  p {
+		  padding-top: 40px;
+	  }
+	  h1 {
+		  padding: 20px 0px;
+	  }
+	  .border {
+		  width: 100%;
+		  height: 100%;
+		  background: #b2d6d1;
+		  text-align: center;
+		  position: absolute;
+	  }
+	  .content {
+		  background-color: #f8f8f8;
+		  width: 80%;
+		  height: 100%;
+		  position: relative;
+    	  margin-left: auto;
+    	  margin-right: auto;
+		  font-size: 20px;
+		  line-height: 30px;
+	  }
+	  .allignCenterRight {
+		  padding-right:5px;
+		  padding-top:30px;
+		  text-align:right;
+		  width:50%;
+	      float: left;
+		  box-sizing: border-box;
+	  }
+	  .allignCenterLeft {
+		  padding-left:5px;
+		  padding-top:30px;
+		  text-align:left;
+		  width:50%;
+	      float: left;
+		  box-sizing: border-box;
+	  } 
+	  .select {  
+		  width: 30%;
+  		  height: 35px;
+		  appearance: none;
+		  border: none;
+  		  font-size: 16px;
+	  }
+	  
+	  .field {
+	  	  width: 50%;
+		  height: 35px;
+		  background: #fdfdfd;
+		  font-size: 16px;
+	  }
+	  #ageSelect {
+	  	  width: 50%;
+		  height: 35px;
+		  background: white;
+		  font-size: 16px;
+		  color: #7b7b7b;
+	  }
+	  
+  </style>
+  
+</head>
+<body>
+	<div class="border">
+			<h1>Survey Form</h1>
+			<div class="content">
+				<p>Let us know how we can improve freeCodeCamp</p>
+				<div>
+				  <label for="name" class="allignCenterRight">* Name</label>
+				  <div  class="allignCenterLeft">
+				    <input type="text" class="field" name="name" placeholder="Enter your name"/>
+			  	  </div>
+				</div>
+				<div>
+				  <label for="email" class="allignCenterRight">* E-Mail</label>
+				  <div class="allignCenterLeft">
+				  	<input type="email" class="field" name="email" placeholder="Enter your Email"/>
+				  </div>
+				</div>
+				<div>
+				  <label for="age" class="allignCenterRight">* Age</label>
+				  <div class="allignCenterLeft">
+				    <select id="ageSelect" name="ageSelect">
+						<option selected="selected">Age</option>
+					</select>
+			  	  </div>
+				</div>
+				<div>
+					<label for="select" class="allignCenterRight">Which option current best describes your role?</label>
+					<div class="allignCenterLeft">
+					  <select class="select" name="select">
+					    <option>Student</option>
+					    <option>Option 2</option>
+					    <option>Option 3</option>
+					  </select>
+				    </div>
+				</div>
+				<div>
+					<div class="allignCenterRight">
+						<label for="checkboxFriend">*How likely is that you would reccomend<br>freeCodecamp to a friend?</label>
+					</div>
+					<div class="allignCenterLeft">
+						<div>
+							<input type="checkbox" id="definitely" name="definitely">
+							<label for="definitely">Definitely</label>
+						</div>
+						<div>
+							<input type="checkbox" id="maybe" name="maybe">
+							<label for="maybe">Maybe</label>
+						</div>
+						<div>
+							<input type="checkbox" id="notSure" name="notSure">
+							<label for="notSure">Not sure</label>
+						</div>
+					</div>
+				</div>
+				<div>
+					<label for="select" class="allignCenterRight">What do you like most in FCC:</label>
+					<div class="allignCenterLeft">
+					  <select class="select" name="select">
+					    <option>Select an option</option>
+					    <option>Option 2</option>
+					    <option>Option 3</option>
+					  </select>
+				    </div>
+				</div>
+				<div>
+					<div class="allignCenterRight">
+						<label for="checkboxFriend">*Things that should be improved in the future<br>(Check all that apply):</label>
+					</div>
+					<div class="allignCenterLeft">
+					  	<div>
+							<input type="checkbox" id="frontEnd" name="frontEnd">
+							<label for="frontEnd">Front-end Projects</label>
+					  	</div>
+					  	<div>
+							<input type="checkbox" id="backEnd" name="backEnd">
+							<label for="backEnd">Back-end Projects</label>
+					  	</div>
+					  	<div>
+							<input type="checkbox" id="dataVisualization" name="dataVisualization">
+							<label for="dataVisualization">Data Visualization</label>
+					  	</div>
+					</div>
+				</div>
+		    </div>
+	</div>
+</body>
+</html>
