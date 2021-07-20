@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+	<style type="text/css"> 
+
+	*{
+		box-sizing: border-box;
+
+	}
+
+	body{
+		margin: 0;
+	}
+
+	.gesamt{
+		display: grid;
+		grid-template-columns: 100%;
+		grid-template-rows: 15% 15% 55% 15% ;
+		height: calc(100vh);
+		margin: 0;
+	}
+
+
+	#red{
+		background-color: red;
+		order: 1;
+
+	}
+	#green{
+		background-color: green;
+		order: 2;
+
+	}
+	#blue{
+		background-color: blue;
+		order: 3;
+	}
+	#pink{
+		background-color: purple;
+		order: 4;
+	}
+
+
+	@media screen and (min-width: 300px) {
+	.gesamt{ height: calc(100vh - 8vh); grid-template-columns: 30% 70% ; grid-template-rows: 20% 20% 20% 20% 20%; margin: 4vh 2.5vw 4vh 2.5vw;}
+  	#red { grid-area:  1/1/1/3;margin-bottom: 3vh} 
+  	#green   { grid-area:  2/1/5/2; margin-right:1.5vh }
+  	#blue { grid-area:  2/2/5/6;}
+  	#pink { grid-area:  5/1/6/6;margin-top: 1.5vh}
+}
+
+
+
+	@media screen and (min-width: 600px) {
+	.gesamt{ height: calc(100vh-); grid-template-columns: 20% 20% 20% 20% 20%; grid-template-rows: 35% 5% 20% 20% 20%;}
+  	#red { grid-area:  1/1/2/6;} 
+  	#green   { grid-area:  2/1/6/2;margin: 0;}
+  	#blue { grid-area:  2/2/6/5;margin: 0 1.5vh 0 1.5vh; }
+  	#pink { grid-area:  2/5/6/5;margin: 0;}
+}
+
+	
+
+</style>
+</head>
+<body>
+
+<div class="gesamt">
+
+<div id="red">
+</div>
+
+
+<div id="green">
+</div>
+
+<div id="blue" >
+</div>
+
+<div id="pink" >
+</div>

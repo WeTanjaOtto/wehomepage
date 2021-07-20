@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+        <style>
+            body{
+                display: flex;
+                flex-flow: row wrap;
+            }
+			
+			* {
+				margin: .5em;
+			}
+
+            .red {
+                background-color: red;
+                flex-direction: row;
+                width: 100vw;
+                height: 15vh;
+            }
+
+            .green {
+                background-color: green;
+                width: calc(20% - 1em);
+                height: 100vh;
+            }
+
+            .blue {
+                background-color: blue;
+                width: calc(60% - 1em);
+                height: 100vh;
+            }
+
+            .purple {
+                background-color: purple;
+                width: calc(20% - 1em);
+                height: 100vh;
+            }
+
+            @media(max-width: 600px){
+                .green {
+                    width: calc(30% - 1em);
+                    height: 150vh;
+                }
+
+                .blue {
+                    width: calc(70% - 1em);
+                    height: 150vh;
+                }
+
+                .purple {
+                    flex-direction: row;
+                    width: calc(100% - 1em);
+                    height: 15vh;
+                }
+            }
+
+            @media(max-width: 350px){
+                .red{
+                    width: 100vw;
+                }
+
+                .green {
+                    width: calc(100%);
+                    height: 15vh;
+                }
+
+
+                .blue {
+                    width: calc(100%);
+                }
+
+                .purple {
+                    width: calc(100%);
+                }
+
+            }
+        </style>
+    </head>
+    <body>
+        <div class="red"></div>  
+        <div class="green"></div>
+        <div class="blue"></div>
+        <div class="purple"></div>
+    </body>
+</html>

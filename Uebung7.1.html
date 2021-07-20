@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>Übung 7.1</title>
+  
+  <div id="test">
+  	<p>This is a performance test </p>
+  </div>
+  
+  <script>
+	  const d = document;
+	  const x = d.getElementById('test');
+	  const newTable = d.createElement("table");
+	  const oneRow = d.createElement("tr");
+	  const twoRow = d.createElement("tr");
+	  newTable.appendChild(oneRow);
+	  newTable.appendChild(twoRow);
+	  ['innerHTML', 'innerText', 'textContent', 'outerHTML'].forEach(
+		  prop => {
+			  const newCell = d.createElement("td");
+			  const newCell2 = d.createElement("td");
+			  oneRow.appendChild(newCell);
+			  twoRow.appendChild(newCell2);
+			  const t0 = performance.now();
+			  newCell.appendChild(d.createTextNode(`${prop}`));
+			  console.log( `${prop}[length:${x[prop].length}] ${x[prop]}`  );
+			  const t1 = performance.now();
+			  newCell2.appendChild(d.createTextNode(`${t1-t0}`));
+			  
+			  
+		  }
+	  );
+	  
+	  d.body.appendChild(newTable, x);
+	
+  </script>
+  
+</head>
+<body>
+  
+</body>
+</html>
+
+
+
+

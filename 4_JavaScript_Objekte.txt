@@ -1,0 +1,26 @@
+var array = [];
+
+function Person(name, autos){
+    this.name = name;
+    this.autos = autos;
+    array.push(this);
+}
+function Auto(color, id, marke){
+    this.color = color;
+    this.id = id;
+    this.marke = marke;
+}
+
+function conflict(){
+    var compare = [];
+    for(i = 0; i < array.length; i++){
+        for(j = 0; j < array[i].autos.length; j++){
+            for(k = 0; k < compare.length; k++){
+                if(compare[k].id === array[i].autos[j].id){
+                    console.log("auto hat mehr als einen Besitzer");
+                }
+            }
+            test.push(array[i].autos[j]);
+        }
+    }
+    console.log("Kein Konflik gefunden");

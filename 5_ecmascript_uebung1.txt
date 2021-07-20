@@ -1,0 +1,56 @@
+class Vorrang {
+    constructor(data) {
+        this.data = this.topsortUtil(data);
+    }
+    getTopSort() {
+        return this.data;
+    }
+	
+    topsortUtil(data, resArray = [], count = 0){
+        for(var row = 0; data.length > row; ++row){
+            for(var col = 0; data[row].length > col; ++col){  
+                if(this.getPredecessors(data[row][col], data) === 0 && !resArray.includes(data[row][col])){
+                    resArray.push(data[row][col]);
+                }
+            }
+        }
+        if(count-1 === data.length){
+            let result = resArray;
+            return result;
+        }
+        data = (this.deleteNode(resArray[count-1], data)).slice();
+        
+        return this.topsortUtil(data, resArray, ++count);
+    }
+    deleteNode(node, data){
+        var res = [];
+        for(var row = 0; data.length > row; ++row){
+            let arr = [];
+            for(var col = 0; data[row].length > col; ++col){
+                if(data[row][col] !== node){
+                    arr.push(data[row][col]);
+                }
+            }
+            res.push(arr);
+        }
+        return res;
+    }
+    getPredecessors(node, data){
+        var descedantCounter = 0;
+        for(var row=0; data.length > row; ++row){
+            if(data[row][1] === node){
+                ++descedantCounter;
+            }
+        }
+        return descedantCounter;
+    }
+}
+var myVorrang1 = new Vorrang([ ["schlafen", "studieren"], ["essen", "studieren"], ["studieren", "prüfen"] ]);
+var myVorrang2 = new Vorrang([[5,4], [4,3], [4,3], [3,2], [3,1], [2, 0], [0, 1]])
+var actualData1 = myVorrang1.getTopSort();
+var actualData2 = myVorrang2.getTopSort();
+var checkData1 = ["schlafen", "essen", "studieren", "prüfen"];
+var checkData2 = [5, 4, 3, 2, 0, 1];
+console.log(actualData1);
+console.assert(JSON.stringify(actualData1) === JSON.stringify(checkData1), {actual: actualData1, expected: checkData1});
+console.assert(JSON.stringify(actualData2) === JSON.stringify(checkData2), {actual: actualData2, expected: checkData2} );

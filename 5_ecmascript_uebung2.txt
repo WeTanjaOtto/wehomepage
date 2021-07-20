@@ -1,0 +1,80 @@
+class Vorrang {
+    constructor(data) {
+        this.data = data;
+        this.myMap = new Map();
+        this.mySet = new Set();
+    }
+    [Symbol.iterator]() {
+        var nextIndex = -1;
+        const thatData = this.data;
+        const thatSet = this.mySet;
+        const thatMap = this.myMap;
+        var it = thatSet.keys();
+        return {
+            next: () => {
+                ++nextIndex;
+                this.createMap();
+                this.addValueToSet();
+                this.deleteValuesFromArray();
+                
+                return nextIndex < thatSet.size ?
+                    {value: it.next(), done: false} :
+                    {done: true};
+            }
+        }
+    }
+    deleteValuesFromArray() {
+        const thatData = this.data;
+        const thatSet = this.mySet;
+        for(let row = 0; thatData.length > row; ++row){
+            for(let col = 0; thatData[row].length > col; ++col){
+                if(thatSet.has(thatData[row][col])){
+                    thatData[row][col] = thatData[row][col+1];
+                    thatData[row][col+1] = undefined;
+                }
+            }
+        }
+    }
+    addValueToSet() {
+        const thatMap = this.myMap;
+        const thatSet = this.mySet;
+        for(let key of thatMap.keys()){
+            if(thatMap.get(key) === 0 && !thatSet.has(key)){
+                thatSet.add(key);
+                break;
+            }
+        }
+    }
+    createMap() {
+        const thatData = this.data;
+        const thatMap = this.myMap;
+        for(let row = 0; thatData.length > row; ++row){
+            for(let col = 0; thatData[row].length > col; ++col){
+                thatMap.set(thatData[row][col], this.getPredecessors(thatData[row][col]));
+            }
+        }
+    }
+    getPredecessors(node) {
+        const thatData = this.data;
+        var descedantCounter = 0;
+        for(var row=0; thatData.length > row; ++row){
+            if(thatData[row][1] === node){
+                ++descedantCounter;
+            }
+        }
+        return descedantCounter;
+    }
+}
+
+var myVorrang1 = new Vorrang([ ["schlafen", "studieren"], ["essen", "studieren"], ["studieren", "prüfen"] ]);
+var myVorrang2 = new Vorrang([[5,4], [4,3], [4,3], [3,2], [3,1], [2, 0], [0, 1]])
+var v1 = new Vorrang(myVorrang1);
+var v2 = new Vorrang(myVorrang2);
+const checkMap = new Map();
+const checkSet = new Set();
+for(const next of v1){
+    console.log(next);
+}
+for(const next of v2){
+    console.log(next);
+}

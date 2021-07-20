@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            display: grid;
+            grid-template-rows: 10vh 10vh 60vh 20vh;
+            grid-template-columns: 50% 50%;
+            margin: 0;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        #first {
+            color: lightgray;
+            grid-row: 1;
+            grid-column-start: 1;
+            grid-column-end: 3;
+            background-color: black;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #first>div {
+            margin: 10px;
+        }
+
+        #second {
+            grid-row: 2;
+            grid-column-start: 1;
+            grid-column-end: 3;
+            background-color: lightgray;
+            font-size: x-large;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #third {
+            grid-row: 3;
+            grid-column-start: 1;
+            background-color: lightgray;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #third>img {
+            height: 90%;
+            border: 1px solid black;
+            border-radius: 5px;
+        }
+
+        #fourth {
+            grid-row: 3;
+            grid-column-start: 2;
+            background-color: lightgray;
+            display: flex;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            line-height: 60px;
+        }
+
+        #fifth {
+            color: lightgray;
+            grid-row: 4;
+            grid-column-start: 1;
+            grid-column-end: 3;
+            background-color: black;
+            display: flex;
+            flex-direction: column;
+            line-height: 30px;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="first">
+        <div>The book series</div>
+        <div>Testimonials</div>
+        <div>The Author</div>
+        <div>Free resources</div>
+    </div>
+    <div id="second">
+        <b>You &nbsp; dont &nbsp; know &nbsp; JavaScript</b>
+    </div>
+    <div id="third">
+        <img src=" https://kaul.inf.h-brs.de/we/assets/img/landing-img.png" alt="picture">
+    </div>
+    <div id="fourth">
+        <div>
+            Dont´t just drift through Javascript.
+        </div>
+        <div>
+            Understand how Javascript works
+        </div>
+        <div>
+            Start your journey through the bumpy side of Javascript
+        </div>
+        <div style="background-color: orange; width: 200px; font-size: x-small; color: white; text-align: center; vertical-align: center; border-radius: 5px; line-height: 3em;">
+            ORDER YOUR COPY NOW
+        </div>
+    </div>
+    <div id="fifth">
+        <div>
+            The first ebook in the series is absolutely free.
+        </div>
+        <div style="background-color: orange; width: 350px; font-size: x-small; color: white; text-align: center; border-radius: 5px;">
+            FIND OUT MORE ABOUT THIS OFFER
+        </div>
+    </div>
+</body>
+
+</html>
